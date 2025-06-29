@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>To-do List</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="conteudo">
-            <h1>To-do List</h1>
-            <input class="" type="text" id="input">
-            <button id="button">CLICK ME</button>
-        </div>
+      <div class="conteudo">
+        <h1>To-do List</h1>
+        <ul id="camp"></ul>
+        <input class="" type="text" id="input" />
+        <button id="button" onclick="addList()">CLICK ME</button>
+      </div>
     </div>
-    <div class="list">
-        <h1>List</h1>
-        <div class="task" id="task">
-            <h2 id="conteudo"></h2>
-            <button id="remove"></button>
-        </div>
-    </div>
-</body>
+
+    <script>
+      function addList() {
+        let input = document.getElementById("input");
+        let camp = document.getElementById("camp");
+        let content = document.createElement("li");
+
+        if(input.value.trim() != "") {
+          content.innerText = input.value;
+
+          let btnExcluir = document.createElement("button");
+          btnExcluir.classList.add("button")
+          btnExcluir.innerText = "❌"
+          btnExcluir.style.marginLeft = "30px";
+          btnExcluir.style.textAlign = "center";
+
+          btnExcluir.onclick = function() {
+            camp.removeChild(content)
+          }
+
+          content.appendChild(btnExcluir);
+
+          camp.appendChild(content);
+
+          input.value = "";
+        }
+      }
+    </script>
+  </body>
 </html>

@@ -1,6 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 
 .container {
     width: 100vw;
+    background-color: aquamarine;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -45,7 +51,7 @@
     width: 35%;
     height: 60%;
     color: white;
-    background-color: rgba(0, 0, 0, 0.829);
+    background-color: rgba(2, 90, 131, 0.829);
     border-radius: 20px;
 
     h1 {
@@ -58,10 +64,5 @@
         background-color: white;
         outline: none;
         margin-bottom: 15px;
-    }
-
-    button {
-        width: 20%;
-        padding: 12px;
     }
 }
