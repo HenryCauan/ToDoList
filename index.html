@@ -17,30 +17,52 @@
     </div>
 
     <script>
+      const input = document.getElementById("input");
+      const camp = document.getElementById("camp");
+
+      // Carregar tarefas salvas ao abrir a página
+      window.onload = function () {
+        const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+        tarefas.forEach((tarefa) => {
+          criarItemNaLista(tarefa);
+        });
+      };
+
       function addList() {
-        let input = document.getElementById("input");
-        let camp = document.getElementById("camp");
-        let content = document.createElement("li");
-
-        if(input.value.trim() != "") {
-          content.innerText = input.value;
-
-          let btnExcluir = document.createElement("button");
-          btnExcluir.classList.add("button")
-          btnExcluir.innerText = "❌"
-          btnExcluir.style.marginLeft = "30px";
-          btnExcluir.style.textAlign = "center";
-
-          btnExcluir.onclick = function() {
-            camp.removeChild(content)
-          }
-
-          content.appendChild(btnExcluir);
-
-          camp.appendChild(content);
-
+        if (input.value.trim() !== "") {
+          criarItemNaLista(input.value);
+          salvarTarefa(input.value);
           input.value = "";
         }
+      }
+
+      function criarItemNaLista(texto) {
+        const content = document.createElement("li");
+        content.innerText = texto;
+
+        const btnExcluir = document.createElement("button");
+        btnExcluir.innerText = "❌";
+        btnExcluir.style.marginLeft = "30px";
+
+        btnExcluir.onclick = function () {
+          camp.removeChild(content);
+          removerTarefa(texto);
+        };
+
+        content.appendChild(btnExcluir);
+        camp.appendChild(content);
+      }
+
+      function salvarTarefa(tarefa) {
+        const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+        tarefas.push(tarefa);
+        localStorage.setItem("tarefas", JSON.stringify(tarefas));
+      }
+
+      function removerTarefa(tarefa) {
+        let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+        tarefas = tarefas.filter((item) => item !== tarefa);
+        localStorage.setItem("tarefas", JSON.stringify(tarefas));
       }
     </script>
   </body>
