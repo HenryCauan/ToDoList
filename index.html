@@ -14,9 +14,9 @@
   <body>
     <div class="container">
       <div class="conteudo">
-        <div class="header">
-          <div class="list-check"><i class="ri-list-check"></i></div>
-          <div class="calendar-check"><i class="ri-calendar-check-fill"></i></div>
+        <div class="header" id="header">
+          <div class="active-1" id="icon-list-1"><i class="ri-list-check"></i></div>
+          <div class="icon-calendar" id="icon-calendar-1"><i class="ri-calendar-check-fill"></i></div>
         </div>
 
         <ul id="camp"></ul>
@@ -26,11 +26,11 @@
       </div>
       <div class="conteudo2">
         <div class="header">
-          <div class=""><i class="ri-list-check"></i></div>
-          <div class=""><i class="ri-calendar-check-fill"></i></div>
+          <div class="list-check" id="icon-list-2"><i class="ri-list-check"></i></div>
+          <div class="active-2" id="icon-calendar-2"><i class="ri-calendar-check-fill"></i></div>
         </div>
 
-        <ul id="camp"></ul>
+        <ul id="campo-tarefa"></ul>
         <button class="add" id="button" onclick="showModal()">
           <i class="ri-add-line"></i>
         </button>
@@ -45,113 +45,6 @@
       </div>
     </div>
 
-    <script>
-      const input = document.getElementById("input");
-      const camp = document.getElementById("camp");
-      const content = document.getElementById("conteudo");
-      const modal = document.getElementById("modal");
-      const close = document.getElementById("close");
-      const tarefasCheck = [];
-
-      // Carregar tarefas salvas ao abrir a página
-      window.onload = function () {
-        const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
-        tarefas.forEach((tarefa) => {
-          criarItemNaLista(tarefa);
-        });
-      };
-
-      const closeModal = () => {
-        console.log("foi clicado");
-        const conteudo = document.querySelector(".conteudo");
-        const modal = document.getElementById("modal");
-
-        // Definir visibilidade inicial se não estiver definida
-        if (conteudo.style.visibility === "") {
-          conteudo.style.visibility = "visible";
-        }
-        if (modal.style.visibility === "") {
-          modal.style.visibility = "hidden";
-        }
-
-        // Alternar visibilidade
-        if (
-          conteudo.style.visibility === "visible" &&
-          modal.style.visibility === "hidden"
-        ) {
-          conteudo.style.visibility = "hidden";
-          modal.style.visibility = "visible";
-        } else {
-          conteudo.style.visibility = "visible";
-          modal.style.visibility = "hidden";
-        }
-      };
-
-      const showModal = () => {
-        console.log("foi clicado");
-        const conteudo = document.querySelector(".conteudo");
-        const modal = document.getElementById("modal");
-
-        // Definir visibilidade inicial se não estiver definida
-        if (conteudo.style.visibility === "") {
-          conteudo.style.visibility = "visible";
-        }
-        if (modal.style.visibility === "") {
-          modal.style.visibility = "hidden";
-        }
-
-        // Alternar visibilidade
-        if (
-          conteudo.style.visibility === "visible" &&
-          modal.style.visibility === "hidden"
-        ) {
-          conteudo.style.visibility = "hidden";
-          modal.style.visibility = "visible";
-        } else {
-          conteudo.style.visibility = "visible";
-          modal.style.visibility = "hidden";
-        }
-      };
-
-      function addList() {
-        if (input.value.trim() !== "") {
-          criarItemNaLista(input.value);
-          salvarTarefa(input.value);
-          input.value = "";
-        }
-      }
-
-      function criarItemNaLista(texto) {
-        const content = document.createElement("li");
-        content.innerText = texto;
-
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.classList.add("custom-checkbox"); // Adiciona a classe para estilização
-
-        content.appendChild(checkbox);
-        camp.appendChild(content);
-      }
-
-      function salvarTarefa(tarefa) {
-        const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
-        tarefas.push(tarefa);
-        localStorage.setItem("tarefas", JSON.stringify(tarefas));
-      }
-
-      function removerTarefa(tarefa) {
-        let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
-        tarefas = tarefas.filter((item) => item !== tarefa);
-        localStorage.setItem("tarefas", JSON.stringify(tarefas));
-      }
-
-      function Verify() {
-        if (checkbox.check) {
-          content.style.textDecoration = "line-through";
-        } else {
-          content.style.textDecoration = "none";
-        }
-      }
-    </script>
+    <script src="./function.js"></script>
   </body>
 </html>
