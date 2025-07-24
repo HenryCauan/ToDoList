@@ -2,9 +2,9 @@
 
 Um aplicativo web simples e intuitivo para gerenciar suas tarefas diárias, desenvolvido com foco na praticidade e experiência do usuário.
 
-## 🚀 Demo
+## 🚀 Preview
 
-Acesse a aplicação em funcionamento: [https://to-do-list-silk-eight-72.vercel.app/](https://to-do-list-silk-eight-72.vercel.app/)
+
 
 ## ✨ Funcionalidades
 
