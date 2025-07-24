@@ -100,7 +100,7 @@ function criarItemNaLista(texto) {
                 adicionarTarefaConcluida(texto); // Adiciona ao array tarefasConcluidas
                 imprimirTarefasConcluidas(); // Atualiza o DOM com as tarefas concluídas
                 camp.removeChild(content);
-            }, 2000)
+            }, 5000)
         } else {
             content.style.textDecoration = "none";
             removerTarefaConcluida(texto); // Remove do array tarefasConcluidas

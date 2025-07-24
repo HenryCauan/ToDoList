@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,38 +12,47 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="conteudo">
-        <div class="header" id="header">
-          <div class="active-1" id="icon-list-1"><i class="ri-list-check"></i></div>
-          <div class="icon-calendar" id="icon-calendar-1"><i class="ri-calendar-check-fill"></i></div>
-        </div>
+    <main class="container">
+      <section class="conteudo" aria-labelledby="titulo-lista">
+        <header class="header" id="header">
+          <div class="active-1" id="icon-list-1" title="Lista">
+            <i class="ri-list-check"></i>
+          </div>
+          <div class="icon-calendar" id="icon-calendar-1" title="Calendário">
+            <i class="ri-calendar-check-fill"></i>
+          </div>
+        </header>
 
-        <ul id="camp"></ul>
-        <button class="add" id="button" onclick="showModal()">
+        <ul id="camp" aria-label="Tarefas pendentes"></ul>
+        <button class="add" id="button" onclick="showModal()" aria-label="Adicionar tarefa">
           <i class="ri-add-line"></i>
         </button>
-      </div>
-      <div class="conteudo2">
-        <div class="header">
-          <div class="list-check" id="icon-list-2"><i class="ri-list-check"></i></div>
-          <div class="active-2" id="icon-calendar-2"><i class="ri-calendar-check-fill"></i></div>
-        </div>
+      </section>
 
-        <ul id="campo-tarefa"></ul>
-        <button class="add" id="button" onclick="showModal()">
-          <i class="ri-add-line"></i>
-        </button>
-      </div>
-      <div class="modal" id="modal">
-        <h2>Adicionar nova tarefa</h2>
-        <input type="text" id="input" placeholder="Digite a tarefa" />
-        <div class="buttons">
-          <button id="close" onclick="closeModal()">Cancelar</button
-          ><button onclick="addList()">Salvar</button>
-        </div>
-      </div>
-    </div>
+      <section class="conteudo2" aria-labelledby="titulo-concluidas">
+        <header class="header">
+          <div class="list-check" id="icon-list-2" title="Lista">
+            <i class="ri-list-check"></i>
+          </div>
+          <div class="active-2" id="icon-calendar-2" title="Calendário">
+            <i class="ri-calendar-check-fill"></i>
+          </div>
+        </header>
+
+        <ul id="campo-tarefa" aria-label="Tarefas concluídas"></ul>
+      </section>
+
+      <dialog class="modal" id="modal" aria-modal="true">
+        <form method="dialog">
+          <h2 id="titulo-modal">Adicionar nova tarefa</h2>
+          <input class="input-tarefa" id="input" type="text" placeholder="Digite a tarefa" aria-labelledby="titulo-modal" />
+          <div class="buttons">
+            <button id="close" onclick="closeModal()" type="button">Cancelar</button>
+            <button onclick="addList()" type="submit">Salvar</button>
+          </div>
+        </form>
+      </dialog>
+    </main>
 
     <script src="./function.js"></script>
   </body>

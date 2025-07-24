@@ -1,246 +1,231 @@
-body {
-    margin: 0;
-    padding: 0;
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+body {
+  margin: 0;
+  padding: 0;
+}
 
 .container {
-    width: 100vw;
-    background: linear-gradient(
-        135deg,         /* Ângulo: diagonal */
-        #fcd4dc 0%,     /* Rosa claro */
-        #b58bd1 100%    /* Roxo claro */
-      );
-    height: 100vh;
-    height: 100dvh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-
-.camp li {
-    display: flex;
-    align-items: center;
-}
-
-.camp li input[type="checkbox"] {
-    order: 0; /* Garante que o checkbox venha primeiro */
-    margin-right: 8px; /* Espaço entre o checkbox e o texto */
-}
-
-.list {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    border-radius: 10px;
-    color: white;
-    top: 0;
-    left: 10px;
-    position: absolute;
-    background-color: black;
-    width: 15%;
-    min-height: 40%;
-    z-index: 2;
-    padding: 20px;
-
-    .task {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        font-size: 12px;
-
-        button {
-            text-align: center;
-            height: 1.2rem;
-        }
-    }
+    font-family: "Inter", sans-serif;
+  width: 100vw;
+  background: linear-gradient(
+    135deg,
+    /* Ângulo: diagonal */ #fcd4dc 0%,
+    /* Rosa claro */ #b58bd1 100% /* Roxo claro */
+  );
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
 
 .header {
-    position: relative;
-    align-self: center;
-    width: 50%;
-    justify-content: space-between;
-    top: 0;
-    padding: 10px;
-    display: flex;
-    font-size: 2rem;
+  position: relative;
+  align-self: center;
+  width: 50%;
+  height: 1rem;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  top: 0;
+  padding: 10px;
+  display: flex;
+  font-size: 2rem;
 }
 
 .conteudo {
-    visibility: visible;
-    position: fixed;
+  visibility: visible;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(95%, 400px);
+  height: 35rem;
+  color: black;
+  background-color: white;
+  border-radius: 20px;
+
+  .active-1 {
+    color: #6c5ce7;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  ul {
+    height: 90%;
+    overflow-y: scroll;
+    overscroll-behavior-inline: none; 
+    position: relative;
+    left: -1rem;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    width: min(95%,400px);
-    height: 55vh;
-    color: black;
-    background-color: white;
-    border-radius: 20px;
+    list-style: none;
 
-    .active-1 {
-        color: #6c5ce7;
+    li {
+      font-size: 15px;
+      display: flex;
+      align-items: center;
     }
+  }
 
-    h1 {
-        font-size: 3rem;
-    }
-
-    ul {
-        height: 90%;
-        overflow-y: scroll;
-        overscroll-behavior-inline: none;
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-
-        li {
-            display: flex;
-        }
-    }
-
-    .add {
-        align-self: center;
-        width: 60px;
-        height: 60px;
-        font-size: 2rem;
-        border: none;
-        position: absolute;
-        border-radius: 50px;
-        bottom: -2rem;
-        color: white;
-        background-color: #ffba74;
-    }
+  .add {
+    align-self: center;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    border: none;
+    position: absolute;
+    border-radius: 50px;
+    bottom: -2rem;
+    color: white;
+    background-color: #ffba74;
+  }
 }
 .conteudo2 {
-    visibility: hidden;
-    position: fixed;
+  visibility: hidden;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(95%, 400px);
+  height: 35rem;
+  color: black;
+  background-color: white;
+  border-radius: 20px;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  ul {
+    position: relative;
+    left: -1rem;
+    height: 90%;
+    overflow-y: scroll;
+    overscroll-behavior-inline: none;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    width: min(95%,400px);
-    height: 55vh;
-    color: black;
-    background-color: white;
-    border-radius: 20px;
+    list-style: none;
+  }
 
-    h1 {
-        font-size: 3rem;
-    }
+  li {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+  }
 
-    ul {
-        height: 90%;
-        overflow-y: scroll;
-        overscroll-behavior-inline: none;
-        display: flex;
-        flex-direction: column;
-        list-style: none;
+  .add {
+    align-self: center;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    border: none;
+    position: absolute;
+    border-radius: 50px;
+    bottom: -2rem;
+    color: white;
+    background-color: #ffba74;
+  }
 
-        li {
-            display: flex;
-        }
-    }
-
-    .add {
-        align-self: center;
-        width: 60px;
-        height: 60px;
-        font-size: 2rem;
-        border: none;
-        position: absolute;
-        border-radius: 50px;
-        bottom: -2rem;
-        color: white;
-        background-color: #ffba74;
-    }
-
-    .active-2 {
-        color: #6c5ce7;
-    }
+  .active-2 {
+    color: #6c5ce7;
+  }
 }
 
 .modal {
-    visibility: hidden;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: min(95%,400px);
-    border-radius: 10px;
-    padding: 2rem;
-    background-color: white;
-
-    input {
-        padding: 1rem;
-        border: 1px solid rgba(128, 128, 128, 0.185);
-        border-radius: 10px;
-    }
-
-    .buttons {
-        display: flex;
-        justify-content: end;
-        gap: 8px;
-        width: 100%;
-
-        button:first-child {
-            font-size: 14px;
-            background-color: white;
-            color: #333;
-            border: none;
-        }
-        button:nth-child(2) {
-            padding: 10px;
-            width: 80px;
-            border-radius: 5px;
-            font-size: 14px;
-            background-color: #9333ea;
-            color: white;
-            border: none;
-        }
-    }
+  visibility: hidden;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 90vw;
+  max-width: 480px;
+  min-width: 0;
+  border-radius: 10px;
+  padding: 2rem;
+  background-color: white;
+  box-sizing: border-box;
 }
 
+@media (max-width: 500px) {
+  .modal {
+    width: 98vw;
+    max-width: 98vw;
+    padding: 1rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  width: 100%;
+
+  button:first-child {
+    font-size: 14px;
+    background-color: white;
+    color: #333;
+    border: none;
+  }
+  button:nth-child(2) {
+    padding: 10px;
+    width: 80px;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #9333ea;
+    color: white;
+    border: none;
+  }
+}
+
+.input-tarefa {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(128, 128, 128, 0.226);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 20px;
+}
 
 /* Estilo base para input[type="checkbox"] */
 .custom-checkbox {
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid #999;
-    border-radius: 4px;
-    background-color: white;
-    cursor: pointer;
-    position: relative;
-  }
-  
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #999;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+}
 
-  .custom-checkbox:checked {
-    background-color: #6c5ce7;
-    border-color: #6c5ce7;
-  }
-  
+.custom-checkbox:checked {
+  background-color: #6c5ce7;
+  border-color: #6c5ce7;
+}
 
-  .custom-checkbox:checked::after {
-    content: "✓";
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    position: absolute;
-    top: -1px;
-    left: 3px;
-  }
+.custom-checkbox:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: -1px;
+  left: 3px;
+}
 
 .conteudo ul,
 .conteudo2 ul {
-    scrollbar-width: none;        /* Firefox */
-    -ms-overflow-style: none;     /* IE e Edge */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE e Edge */
 }
 
 .conteudo ul::-webkit-scrollbar,
 .conteudo2 ul::-webkit-scrollbar {
-    display: none;                /* Chrome, Safari e Opera */
+  display: none; /* Chrome, Safari e Opera */
 }
-  
