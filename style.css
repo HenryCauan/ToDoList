@@ -66,6 +66,7 @@ body {
     list-style: none;
 
     li {
+      gap: 8px;
       font-size: 15px;
       display: flex;
       align-items: center;
@@ -113,6 +114,7 @@ body {
   }
 
   li {
+    gap: 8px;
     font-size: 15px;
     display: flex;
     align-items: center;
