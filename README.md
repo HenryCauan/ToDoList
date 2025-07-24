@@ -4,7 +4,7 @@ Um aplicativo web simples e intuitivo para gerenciar suas tarefas diárias, dese
 
 ## 🚀 Preview
 
-
+<img width="1904" height="1064" alt="Image" src="https://github.com/user-attachments/assets/d4cede19-1fa7-402c-b23f-b65fec3bba06" />
 
 ## ✨ Funcionalidades
 
